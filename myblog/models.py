@@ -14,6 +14,7 @@ class Post(models.Model):
     image = models.ImageField()
     created_at = models.DateField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    tag = TaggableManager()
 
     def __str__(self):
         return self.title
